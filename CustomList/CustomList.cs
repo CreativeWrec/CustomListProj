@@ -34,6 +34,17 @@ namespace CustomList
             }
         }
 
+        public T this[int index]
+        {
+            get
+            {
+                return _items[index];
+            }
+            set
+            {
+                _items[index] = value;
+            }
+        }
 
         public CustomList()
         {
@@ -52,6 +63,8 @@ namespace CustomList
             _items[_count] = item;
             _count++;
         }
+
+
 
     }
 }
