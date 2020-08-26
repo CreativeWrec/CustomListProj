@@ -18,10 +18,9 @@ namespace CustomList
             myList.Add(3);
             myList.Add(4);
             myList.Add(5);
-            myList.Add(5);
-            myList.Add(5);
-            myList.Add(5);
-            myList.Add(5);
+
+            myList.Remove(563);
+
 
             Console.ReadLine();
         }

@@ -41,7 +41,7 @@ namespace CustomListUnitTesting
             int value3 = 3;
             int value4 = 4;
             int value5 = 5;
-            int expected = 2;
+            int expected = 4;
             int actual;
             //act
             customList.Add(value1);
