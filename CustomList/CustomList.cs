@@ -72,9 +72,12 @@ namespace CustomList
 
         public void Remove(T item)
         {
-            if ()
+            for (int i = 0; i < _count; i++)
             {
+                if (item.Equals(_items[i]))
+                {
 
+                }
             }
         }
 
