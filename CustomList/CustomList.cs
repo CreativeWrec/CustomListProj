@@ -99,6 +99,6 @@ namespace CustomList
             return haveRemovedItem;
             // decrement the count, only if an item was removed
         }
-
+       
     }
 }
