@@ -32,7 +32,7 @@ namespace CustomListUnitTesting
         }
 
         [TestMethod]
-        public void Remove_()
+        public void Remove_OneValueIndex_ShiftValueIndex()
         {
             //arrange
             CustomList<int> customList = new CustomList<int>();
@@ -56,7 +56,7 @@ namespace CustomListUnitTesting
         }
 
         [TestMethod]
-        public void Remove_()
+        public void Remove_NonExistantValue_CheckCount()
         {
             //arrange
             CustomList<int> customList = new CustomList<int>();
@@ -65,7 +65,7 @@ namespace CustomListUnitTesting
             int value3 = 3;
             int value4 = 4;
             int value5 = 5;
-            int expected = 4;
+            int expected = 5;
             int actual;
             //act
             customList.Add(value1);
@@ -73,14 +73,14 @@ namespace CustomListUnitTesting
             customList.Add(value3);
             customList.Add(value4);
             customList.Add(value5);
-            customList.Remove(value1);
+            customList.Remove(8);
             actual = customList.Count;
             //assert
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void Remove_()
+        public void Remove_ValueToCheckIfFalse()
         {
             //arrange
             CustomList<int> customList = new CustomList<int>();
@@ -97,14 +97,13 @@ namespace CustomListUnitTesting
             customList.Add(value3);
             customList.Add(value4);
             customList.Add(value5);
-            customList.Remove(value1);
-            actual = customList[100];
+            actual = customList.Remove(100);
             //assert
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void Remove_()
+        public void Remove_ValueToCheckIfTrue ()
         {
             //arrange
             CustomList<int> customList = new CustomList<int>();
@@ -121,8 +120,8 @@ namespace CustomListUnitTesting
             customList.Add(value3);
             customList.Add(value4);
             customList.Add(value5);
-            customList.Remove(value1);
-            actual = customList[4];
+            actual = customList.Remove(value1);
+            
             //assert
             Assert.AreEqual(expected, actual);
         }
