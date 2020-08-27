@@ -11,7 +11,7 @@ namespace CustomList
         static void Main(string[] args)
         {
             //List<T>
-            List<int> myList = new List<int>();
+            CustomList<int> myList = new CustomList<int>();
 
             myList.Add(1);
             myList.Add(2);
@@ -20,6 +20,11 @@ namespace CustomList
             myList.Add(5);
 
             myList.Remove(563);
+
+            foreach(int number in myList)
+            {
+                Console.WriteLine(number);
+            }
 
 
             Console.ReadLine();

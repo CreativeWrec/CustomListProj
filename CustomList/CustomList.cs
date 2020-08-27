@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -108,6 +109,49 @@ namespace CustomList
             }
             return toString;
         }
+        public IEnumerator GetEnumerator()
+        {
+            for (int i = 0; i < _count; i++)
+            {
+                yield return _items[i];
+            }
+        }
+        public static CustomList<T> operator +(CustomList<T> customList, CustomList<T> customListTwo)
+        {
+            CustomList<T> results = new CustomList<T>();
+            for (int i = 0; i < customList.Count; i++)
+            {
+                results.Add(customList[i]);
+            }
+            for (int i = 0; i < customListTwo.Count; i++)
+            {
+                results.Add(customListTwo[i]);
+            }
+            return results;
+        }
 
+        public static CustomList<T> operator -(CustomList<T> customList, CustomList<T> customListTwo)
+        {
+            CustomList<T> results = new CustomList<T>();
+            results = customList;
+            foreach (T item in customListTwo)
+            {
+                results.Remove(item);
+            }
+            return results;
+        }
+        public CustomList<T> Zip(CustomList<T> customList, CustomList<T> customListTwo)
+        {
+            CustomList<T> zipResults = new CustomList<T>();
+            if (Count == customListTwo.Count)
+            {
+                for (int i = 0; i < Count; i++)
+                {
+                    zipResults.Add(customList[i]);
+                    zipResults.Add(customListTwo[i]);
+                }
+            }
+            return zipResults;
+        }
     }
 }
